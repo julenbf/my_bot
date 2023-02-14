@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <gazebo>
+        <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+
+            <!-- WHEEL INFORMATION -->
+
+            <!-- Name of left joint -->
+            <left_joint>left_wheel_joint</left_joint>
+
+            <!-- Name of right joint -->
+            <right_joint>right_wheel_joint</right_joint>
+
+            <!-- The distance from the center of one wheell to the other, in meters, defaults to 0.34 m -->
+            <wheel_separation>0.35</wheel_separation>
+
+            <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+            <wheel_diameter>0.1</wheel_diameter>
+
+
+            <!-- LIMITS OF TORQUE & ACCELERATION -->
+
+            <!-- Maximum torque which wheels could produce, in Nm, defaults to 5 Nm -->
+            <max_wheel_torque>200</max_wheel_torque>
+
+            <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+            <max_wheel_acceleration>10.0</max_wheel_acceleration>
+
+
+            <!-- OUTPUT -->
+
+            <!-- Odometry frame, defaults to 'odom' -->
+            <odometry_frame>odom</odometry_frame>
+
+            <!-- Robot frame to calculate odometry from, defaults to 'base_footprint' -->
+            <robot_base_frame>base_link</robot_base_frame>
+
+            <!-- Set to true to publish transforms for the odometry, defaults to true -->
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+
+            <!-- Set to true to publish transforms for the wheel links, defaults to false -->
+            <publish_wheel_tf>true</publish_wheel_tf>
+
+        </plugin>
+    
+    </gazebo>
+
+</robot>
